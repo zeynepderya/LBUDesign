@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div id="pictureCurrent" class="divCenter">
+    <img [src]="pictureCurrentUrl" height="70" width="70"/>
+</div>
+
+<p id="siteTitle" class="divCenter">PROFILBILD &Auml;NDERN</p>
+
+<div class="divCenter">
+    <button type="submit" class="cancelButton" (click)="cancel()">ABBRECHEN</button>
+    <button type="submit" class="saveButton" (click)="saveAvatar()">SPEICHERN</button>
+</div>
+
+<div align="center">
+    <div id="pictureContainer">
+        <img *ngFor="let avatar of avatarPictures" [src]="avatar.avatarBigUrl" height="70px" width="70px"
+             class="pictureRowMargin" (click)="changePictureCurrent(avatar.avatarBigUrl, avatar._id)"/>
+    </div>
+
+    

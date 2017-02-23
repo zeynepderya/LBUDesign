@@ -1,0 +1,16 @@
+.navbuttom {
+	background: #001a3a;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 50px;
+}
+
+.navbuttoncheckimg {
+	padding-top: 5px;
+}
+
+.textuntenimnavbutton {
+	color: #6B90E1;
+	font-size: 11px;
+	margin-top: 5px
+}

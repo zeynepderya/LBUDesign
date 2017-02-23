@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <img class="kapitelfahne" src=".\assets/chapter10/littleChapterFlag.png" alt="kapitelfähnchen">
+
+        <img class="illulinks" src=".\assets/illustrations/illustrationLeft.png" alt="illuLinks">
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="bubble-text" *ngFor="let competence of foerderplaene">
+            <p>{{competence.note}}</p>
+            <img popover="asdasd" id="competenceDone" src="assets/chapter1/competenceDone.png"
+                 alt="chapter">
+            <span class="number">{{competence.number}}</span>
+            <div class="popover"><p>Du hast diese Kompetenz am {{competence.fromDate}} erreicht!</p></div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <img class="illurechts" src=".\assets/illustrations/illustrationRight.png" alt="illuRechts">
+    </div>
+</div>
+<app-bottombar></app-bottombar>

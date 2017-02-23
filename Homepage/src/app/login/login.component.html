@@ -1,0 +1,28 @@
+<div class="imgcontainer">
+  <img src=".\assets\login\header.png" alt="Avatar" class="avatar">
+</div>
+
+
+
+<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
+  <div class="container1">
+    <input type="text" formControlName="username" required>
+    <br>
+    <input type="password" formControlName="password" required>
+    <br>
+    <button type="submit">LOS!</button>
+  </div>
+
+  <div class="container2">
+    <span class="text_unten">Sie möchten mit CHECK! arbeiten?
+    <br>
+    <a href="#">Jetzt registieren.</a></span>
+  </div>
+</form>
+
+<div class="footer">
+  <img src=".\assets\login\footer.png">
+  <p id="footerhead">edition 2016 dark night blue 1.0</p>
+  <p>CHECK! und CHECK! Lehrerzimmer sind Produkte des Raup&Ritter Verlag und der OnWerk Softwareagentur Mannheim</p>
+  <p>www.raupundritter.com - Kontakt - Impressum - Preise - Hilfe</p>
+</div>

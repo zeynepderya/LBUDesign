@@ -1,0 +1,176 @@
+<div class="background">
+
+    <div class="navbar navbar-fixed-top" id="header">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- linke Buttons -->
+                <div class="col-xs-4">
+                    <!-- Kapiteluebersicht Button und Dropdown-Menue -->
+                    <div class="dropdown">
+                        <button type="button" class="navButton" id="chapterOverview"></button>
+                        <div class="dropdownContent dropdownHeight" id="dropdownChapterOverview">
+                            <section class="dropdownHeader">
+                                <section class="row">
+                                    <img src="assets/confirmation.png" class="col-xs-5 dropdownHeaderPicture"/>
+                                    <p class="dropdownHeader1 col-xs-7">
+                                        CHECK!<br>KOMPETENZLISTE
+                                    </p>
+                                </section>
+                            </section>
+                            <section class="dropdownScrollable">
+                                <a *ngFor="let chapter of chapters" class="chapter00" href="welcome/{{chapter._id}}"
+                                   [style.backgroundColor]="chapter.strongcolor">{{chapter.name}}</a>
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- Foerderplan Buttons und Dropdown-Menue -->
+                    <div class="dropdown">
+                        <button type="button" class="navButton" id="educationalPlan"></button>
+                        <div class="dropdownContent" id="dropdownEducationalPlan">
+                            <section class="dropdownHeader">
+                                <section class="row">
+                                    <img src="assets/educationalPlan-big.png" class="col-xs-5 dropdownHeaderPicture"/>
+                                    <p class="col-xs-7 dropdownHeader1">   F&Ouml;RDERPLAN</p>
+
+                                </section>
+                            </section>
+                            <a *ngFor="let education of educationplan" href="/foerderplan/{{education._id}}">{{education.name}}</a>
+                        </div>
+                    </div>
+
+                    <!-- "Das kann ich" Butonn und das Dropdown-Menue -->
+                    <div class="dropdown">
+                        <button type="button" class="navButton" id="achievedCompetences"></button>
+                        <div class="dropdownContent dropdownHeight" id="dropdownAchievedCompetences">
+                            <section class="dropdownHeader">
+                                <section class="row">
+                                    <img src="assets/achievedCompetences-big.png" class="col-xs-5 dropdownHeaderPicture"/>
+                                    <p class="col-xs-7 dropdownHeader1">
+                                        DAS&nbsp;KANN&nbsp;ICH!
+                                    </p>
+                                </section>
+                            </section>
+                            <section class="dropdownScrollable ">
+                                <a href="#" class="chapter00 chapter00">ALLE KOMPETENZEN</a>
+                                <a *ngFor="let chapter of chapters" [style.backgroundColor]="chapter.strongcolor"
+                                   href="#" class="chapter00">{{chapter.name}}</a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-4">
+                </div>
+                <!-- rechte Buttons 1 -->
+                <div class="col-xs-4">
+
+                    <!-- Profil Button und Dropdown-Menue -->
+                    <div class="dropdown">
+                        <button type="button" class="navButton" id="profile"></button>
+                        <div class="dropdownContent" id="dropdownProfile">
+                            <section class="dropdownHeader">
+                                <section class="row">
+                                    <img src="assets/student/superhero-robin-big-active.png"
+                                         class="col-xs-5 dropdownHeaderPicture"/>
+                                    <p class="col-xs-7 dropdownHeader1">
+                                        Sch&uuml;ler<br>{{ student?.forename }} {{student?.surname}}
+                                    </p>
+                                </section>
+                                <section class="dropdownHeader2">
+                                    {{student?.birth}}
+                                </section>
+                            </section>
+                            <a [routerLink]="['/change-picture']">MEIN PROFILBILD &Auml;NDERN</a>
+                            <a [routerLink]="['/changepw']">MEIN PASSWORT &Auml;NDERN</a>
+                            <a [routerLink]="['/delete-account']">MEIN PROFIL L&Ouml;SCHEN</a>
+                        </div>
+                    </div>
+
+                    <!-- Das Schule Button und Dropdown-Menue -->
+                    <div class="dropdown">
+                        <button type="button" class="navButton" id="schoolProfile"></button>
+                        <div class="dropdownContent" id="dropdownSchoolProfile">
+                            <section class="dropdownHeader">
+                                <section class="row">
+                                    <img [src]="[school?.imageUrl]"
+                                         class="col-xs-5 dropdownHeaderPicture"/>
+                                    <p class="col-xs-7 dropdownHeader1">
+                                        {{school?.name}}
+                                    </p>
+                                </section>
+                                <section class="dropdownHeader2">
+                                    {{school?.address}}<br/>
+                                    {{school?.country}}<br/>
+                                    {{school?.email}}<br/>
+                                    {{school?.telefon}}<br/>
+                                </section>
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- Klasse Button und Dropdown-Menue -->
+                    <div class="dropdown">
+                        <button type="button" class="navButton" id="studyGroupProfile"></button>
+                        <div class="dropdownContent" id="dropdownStudyGroupProfile">
+                            <section class="dropdownHeader">
+                                <section class="row">
+                                    <img [src]="[studyGroups?.imageUrl]"
+                                         class="col-xs-5 dropdownHeaderPicture"/>
+                                    <p class="col-xs-7 dropdownHeader1">
+                                        KLASSE {{studyGroups?.class}}
+                                    </p>
+                                </section>
+                                <section class="dropdownHeader2">
+                                    KLASSENLEHRER/IN<br>{{student?.formteacher}}
+                                </section>
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- Trennung der rechten Buttons -->
+                    <div class="spliten">
+                    </div>
+
+                    <!-- rechte Buttons 2 -->
+                    <!-- Help Button und Dropdown-Menue -->
+                    <div class="dropdown">
+                        <button type="button" class="navButton" id="help"></button>
+                        <div class="dropdownContent" id="dropdownHelp">
+                            <section class="dropdownHeader">
+                                <section class="row">
+                                    <img src="assets/help-big.png" class="col-xs-5 dropdownHeaderPicture"/>
+                                    <p class="col-xs-7 dropdownHeader1">
+                                        BRAUCHST<br>DU HILFE?
+                                    </p>
+                                </section>
+                            </section>
+                            <a href="http://www.check-lehrerzimmer.com/hilfe/erste-schritte/">SO GEHT&apos;S!</a>
+                            <a href="http://www.check-lehrerzimmer.com/tutorial/">VIDEO-TUTORIALS</a>
+                            <a href="http://www.check-lehrerzimmer.com/faq/">H&Auml;UFIG GESTELLTE FRAGEN</a>
+                            <a href="http://www.check-lehrerzimmer.com/contact/">KONTAKT</a>
+                        </div>
+                    </div>
+
+                    <!-- Logout Button und Dropdown-Menue -->
+                    <div class="dropdown">
+                        <button type="button" class="navButton" id="logout"></button>
+                        <div class="dropdownContent" id="dropdownLogout">
+                            <section class="dropdownHeader">
+                                <section class="row">
+                                    <img src="assets/logout-big.png" class="col-xs-5 dropdownHeaderPicture"/>
+                                    <p class="col-xs-7 dropdownHeader1">
+                                        M&Ouml;CHTEST DU<br>CHECK!<br>VERLASSEN?
+                                    </p>
+                                </section>
+                            </section>
+                            <a href="/login" (click)="logout()">JA</a>
+                            <a href="#">NEIN</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

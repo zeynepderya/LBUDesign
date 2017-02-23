@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<div id="picturePosition" class="divCenter">
+    <img src="assets/change-password.png" height="70" width="70"/>
+</div>
+
+<p id="siteTitle" class="divCenter">PASSWORT &Auml;NDERN</p>
+
+<form>
+    <table align="center">
+        <colgroup>
+            <col width="200">
+            <col width="300">
+            <col width="200">
+        </colgroup>
+        <tr>
+            <td align="right" valign="middle" class="fontPassword">AKTUELLES PASSWORT*&nbsp;</td>
+            <td align="center" valign="middle"><input id="currentPassword" type="password"
+                                                      class="passwordField field-border" required></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td align="right" valign="middle" class="fontPassword">NEUES PASSWORT*&nbsp;</td>
+            <td align="center" valign="middle"><input id="match" type="password" class="passwordField field-border"
+                                                      name="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}"
+                                                      title="Aus Sicherheitsgründen muss das Passwort mindestens 7-stellig sein, sowie einen Großbuchstaben, eine Ziffer und ein Sonderzeichen"
+                                                      required></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td align="right" valign="middle" class="fontPassword">PASSWORT BEST&Auml;TIGUNG*&nbsp;</td>
+            <td align="center" valign="middle"><input id="match2" type="password" class="passwordField field-border"
+                                                      name="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}" required>
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <div class="divCenter">
+        <button type="submit" id="changeButton" (click)="changePassword()">&Auml;NDERN</button>
+    </div>
+</form>

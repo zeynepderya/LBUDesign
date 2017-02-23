@@ -1,0 +1,23 @@
+.close-button{
+  margin-left: 250px;
+}
+.success {
+    background-color: #78B639;
+}
+
+.overlay-box {
+    border-style: solid;
+    border-radius:12px;
+    border-color: white;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 200px;
+    font-family: 'Josefin Sans';
+    font-weight: 200;
+    color: #fff;
+    text-align: center;
+    top: 20%;
+    padding-top: 20px;
+}
